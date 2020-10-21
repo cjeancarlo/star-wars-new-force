@@ -30,8 +30,9 @@ import {MatSnackBarModule} from '@angular/material/snack-bar';
 import {MatProgressBarModule} from '@angular/material/progress-bar';
 
 
-
-
+import { ShipsComponent } from 'src/app/components/ships/ships.component';
+import { ShipCardComponent } from 'src/app/components/ship-card/ship-card.component';
+import { ShipInfoDetailComponent } from 'src/app/components/ship-info-detail/ship-info-detail.component';
 
 
 const COREMODULE: any[] = [
@@ -76,11 +77,14 @@ const MATERIAL: any[] = [
 ];
 
 const COMPONENTES: any[] = [
+  ShipsComponent,
+  ShipCardComponent,
+  ShipInfoDetailComponent
 ];
 
 @NgModule({
-  declarations: [],
-  exports: [MATERIAL,  COREMODULE],
+  declarations: [COMPONENTES],
+  exports: [MATERIAL, COMPONENTES , COREMODULE],
   imports: [COREMODULE, MATERIAL]
 })
 export class ShareModule { }

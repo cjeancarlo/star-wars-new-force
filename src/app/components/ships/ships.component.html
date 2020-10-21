@@ -1,0 +1,7 @@
+  <div fxLayout="row wrap" 
+  fxLayout.sm="column"
+  fxLayout.xs="column" 
+  fxLayoutAlign="star center" fxLayoutGap="20px" fxLayoutGap.xs="0">
+    <app-ship-card  [ship]="ship" *ngFor="let ship of ships$ | async"></app-ship-card>
+</div>
+

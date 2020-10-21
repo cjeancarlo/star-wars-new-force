@@ -1,18 +1,18 @@
 import { NgModule } from '@angular/core';
-.import { RouterModule, Routes } from '@angular/router';
-import { ShipsComponent } from './ships.component';
+import { RouterModule, Routes } from '@angular/router';
+import { ShipsPageComponent } from './ships-page.component';
 import { ShareModule } from '../share/share.module';
 
 export const ShipsRoutes: Routes  = [
   {
   path: '',
-  component: ShipsComponent
+  component: ShipsPageComponent
   }
 ];
 
 
 @NgModule({
-  declarations: [ShipsComponent],
+  declarations: [ShipsPageComponent],
   imports: [
     ShareModule,
     RouterModule.forChild(ShipsRoutes),
