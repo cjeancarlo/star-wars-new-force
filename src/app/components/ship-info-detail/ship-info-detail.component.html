@@ -1,0 +1,40 @@
+<div class="ship-info-card" [ngClass.xs]="'ship-info-card-xs'">
+
+  {{ship.name}}
+  {{ship.starship_class}}
+
+
+
+  <div fxLayout="row" fxLayout.sm="column" fxLayout.xs="column" fxLayoutAlign="start" fxLayoutGap="20px"
+    fxLayoutGap.xs="0px" fxLayoutGap.xs="0">
+
+    <div fxFlex="60" fxLayout="row" fxLayoutAlign="start start">
+      <img class="ship-card-img" src="https://starwars-visualguide.com/assets/img/starships/{{starshipId}}.jpg"
+        alt="{{ship.name}}">
+    </div>
+
+    <div fxFlex="40" fxLayout="column" fxLayoutAlign="start start">
+      <p> Modelo: {{ship.model}}</p>
+      <p> Fabricante: {{ship.manufacturer}}</p>
+      <p> Costo: {{ship.cost_in_credits}}</p>
+      <p> Longitud: {{ship.length}}</p>
+      <p> Maxima velocidad: {{ship.max_atmosphering_speed}}</p>
+      <p> Tripulación: {{ship.crew}}</p>
+      <p> Capacidad de Carga: {{ship.cargo_capacity}}</p>
+      <p> Cosumibles: {{ship.consumables}} </p>
+      <p>calificación de hiperimpulsor: {{ship.hyperdrive_rating}}</p>
+      <p>MGLT: {{ship.MGLT}}</p>
+      <p>Pasajeros: {{ship.passengers}}</p>
+      <p>clase de nave estelar {{ship.starship_class}}</p>
+      <p>Creado: {{ship.created}}</p>
+      <p>Editado: {{ship.edited}}</p>
+
+
+      <!-- pilots: string[];
+    films: string[]; -->
+
+    </div>
+
+  </div>
+
+</div>

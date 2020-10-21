@@ -5,7 +5,7 @@ import { AppCustomPreloader } from './app-custom-preloaders';
 
 const APP_ROUTES: Routes = [
    {
-  path: 'ships', loadChildren: () => import('./pages/ships/ships.module').then(m => m.ShipsModule),
+  path: 'ships', loadChildren: () => import('./pages/ships-page/ships.module').then(m => m.ShipsModule),
 }, {
   path: '**',
   redirectTo: '/ships'
