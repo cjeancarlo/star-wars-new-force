@@ -3,14 +3,12 @@ import { RouterModule, Routes } from '@angular/router';
 import { ShipsPageComponent } from './ships-page.component';
 import { ShareModule } from '../share/share.module';
 
-export const ShipsRoutes: Routes  = [
+export const ShipsRoutes: Routes = [
   {
-  path: '',
-  component: ShipsPageComponent
+    path: '',
+    component: ShipsPageComponent,
   }
 ];
-
-
 @NgModule({
   declarations: [ShipsPageComponent],
   imports: [

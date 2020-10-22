@@ -5,10 +5,10 @@ import { AppCustomPreloader } from './app-custom-preloaders';
 
 const APP_ROUTES: Routes = [
    {
-  path: 'ships', loadChildren: () => import('./pages/ships-page/ships.module').then(m => m.ShipsModule),
-}, {
+  path: '', loadChildren: () => import('./pages/home/home.module').then(m => m.HomeModule),
+} , {
   path: '**',
-  redirectTo: '/ships'
+  redirectTo: ''
 }];
 
 @NgModule({
