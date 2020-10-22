@@ -19,7 +19,7 @@ export class ShipService {
 
   private jsonURL = './assets/data/starships.example.json';
   private CACHE_SIZE = 1;
-  constructor(private http: HttpClient,iconRegistry: MatIconRegistry,  sanitizer: DomSanitizer) {
+  constructor(private http: HttpClient, iconRegistry: MatIconRegistry,  sanitizer: DomSanitizer) {
 
 
     this.iconos.forEach(i => {
@@ -30,17 +30,6 @@ export class ShipService {
     });
 
   }
-
-
-
- 
-
-
-
-
-
-
-
 
   get ships() {
     if (!this.cache$) {
