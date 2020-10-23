@@ -8,7 +8,7 @@ const APP_ROUTES: Routes = [
   path: '', loadChildren: () => import('./pages/home/home.module').then(m => m.HomeModule),
 } , {
   path: '**',
-  redirectTo: ''
+  redirectTo: 'landing'
 }];
 
 @NgModule({

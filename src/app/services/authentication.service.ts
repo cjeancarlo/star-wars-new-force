@@ -33,7 +33,7 @@ export class AuthenticationService {
   source: Observable<any> = from([{
     id: 0,
     username: 'jcartaya',
-    password: 'password1'
+    password: 'jcartaya'
   }, {
     id: 1,
     username: 'fsalas',
