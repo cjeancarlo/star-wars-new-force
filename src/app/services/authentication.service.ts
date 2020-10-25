@@ -49,16 +49,10 @@ export class AuthenticationService {
 
   private CheckIsAuth() {
     this.currentUser.subscribe((current: User) => {
-
-
-      console.log('verificando', current);
       this.isAuth = false;
       if (current) {
-        console.log('checkin', current);
         this.isAuth = true;
       }
-
-
 
     });
 

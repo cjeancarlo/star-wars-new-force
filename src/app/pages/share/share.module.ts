@@ -28,7 +28,7 @@ import { MatTableModule } from '@angular/material/table';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import {MatSnackBarModule} from '@angular/material/snack-bar';
 import {MatProgressBarModule} from '@angular/material/progress-bar';
-
+import {MatTabsModule} from '@angular/material/tabs';
 
 import { ShipsComponent } from 'src/app/components/ships/ships.component';
 import { ShipCardComponent } from 'src/app/components/ship-card/ship-card.component';
@@ -74,8 +74,9 @@ const MATERIAL: any[] = [
   MatExpansionModule,
   MatSidenavModule,
   MatSnackBarModule,
-  MatProgressBarModule
-//  MatCarouselModule.forRoot()
+  MatProgressBarModule,
+  MatTabsModule
+
 ];
 
 const COMPONENTES: any[] = [

@@ -2,6 +2,9 @@ import { Component, Inject, OnInit } from '@angular/core';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { ShipService } from 'src/app/services/ship.service';
 import { Ship } from 'src/app/interfaces/ship.interface';
+import { from, Observable, of } from 'rxjs';
+import { Film } from 'src/app/interfaces/film.interface';
+import { map, take, tap } from 'rxjs/operators';
 
 
 @Component({
@@ -16,14 +19,11 @@ export class ShipInfoDetailComponent implements OnInit {
     public dialogRef: MatDialogRef<ShipInfoDetailComponent>,
     @Inject(MAT_DIALOG_DATA) public ship: Ship) { }
 
-  ngOnInit(): void {
-  }
+  ngOnInit(): void {}
 
   get starshipId() {
     return this.shipService.getStarshipId(this.ship);
   }
-
-  
 
   onClose(): void {
     this.dialogRef.close();

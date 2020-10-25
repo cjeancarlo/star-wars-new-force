@@ -1,3 +1,5 @@
+import { Film } from './film.interface';
+
 export interface Ship {
     name: string;
     model: string;
@@ -17,4 +19,5 @@ export interface Ship {
     created: string;
     edited: string;
     url: string;
+    filmsDetail?: Film[];
 }

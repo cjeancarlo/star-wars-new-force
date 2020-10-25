@@ -1,7 +1,8 @@
 <div class="ship-info-card" [ngClass.xs]="'ship-info-card-xs'">
 
-  {{ship.name}}
-  {{ship.starship_class}}
+<h1>{{ship.name}}</h1>  
+<h3>{{ship.starship_class}}</h3>    
+
 
 
 
@@ -14,24 +15,47 @@
     </div>
 
     <div fxFlex="40" fxLayout="column" fxLayoutAlign="start start">
-      <p> Modelo: {{ship.model}}</p>
-      <p> Fabricante: {{ship.manufacturer}}</p>
-      <p> Costo: {{ship.cost_in_credits}}</p>
-      <p> Longitud: {{ship.length}}</p>
-      <p> Maxima velocidad: {{ship.max_atmosphering_speed}}</p>
-      <p> Tripulación: {{ship.crew}}</p>
-      <p> Capacidad de Carga: {{ship.cargo_capacity}}</p>
-      <p> Cosumibles: {{ship.consumables}} </p>
-      <p>calificación de hiperimpulsor: {{ship.hyperdrive_rating}}</p>
-      <p>MGLT: {{ship.MGLT}}</p>
-      <p>Pasajeros: {{ship.passengers}}</p>
-      <p>clase de nave estelar {{ship.starship_class}}</p>
-      <p>Creado: {{ship.created}}</p>
-      <p>Editado: {{ship.edited}}</p>
+    
 
 
-      <!-- pilots: string[];
-    films: string[]; -->
+      <mat-tab-group mat-align-tabs="start">
+        <mat-tab label="Info">
+          <p> Modelo: {{ship.model}}</p>
+          <p> Fabricante: {{ship.manufacturer}}</p>
+          <p> Costo: {{ship.cost_in_credits}}</p>
+          <p> Longitud: {{ship.length}}</p>
+          <p> Maxima velocidad: {{ship.max_atmosphering_speed}}</p>
+          <p> Tripulación: {{ship.crew}}</p>
+          <p> Capacidad de Carga: {{ship.cargo_capacity}}</p>
+          <p> Cosumibles: {{ship.consumables}} </p>
+          <p>calificación de hiperimpulsor: {{ship.hyperdrive_rating}}</p>
+          <p>MGLT: {{ship.MGLT}}</p>
+          <p>Pasajeros: {{ship.passengers}}</p>
+          <p>clase de nave estelar {{ship.starship_class}}</p>
+          <p>Creado: {{ship.created}}</p>
+          <p>Editado: {{ship.edited}}</p>
+        </mat-tab>
+        <mat-tab label="Pilots">
+
+          <div *ngFor="let pilot of ship.pilots">
+            {{pilot}}
+          </div> 
+
+        </mat-tab>
+        <mat-tab label="Films">
+
+          <div *ngFor="let f of ship.filmsDetail" >
+
+            
+              <h2>{{f.title}}</h2>
+              <h3>{{f.episode_id}}</h3>
+              <p> {{f.opening_crawl}} </p>
+        </div>
+        </mat-tab>
+      </mat-tab-group>
+      
+
+    
 
     </div>
 
