@@ -1,11 +1,39 @@
-<mat-card>
+<div fxLayout="column" fxFlex="100" fxLayoutAlign="space-between center" class="ship-bg-landing" style="height:92vh">
+
+
+  <div fxLayout="column" fxFlex="100" fxLayoutAlign="center center">
+    <mat-card *ngIf="!isAuth()">
+      <mat-card-content>
+        <div fxLayout="column" fxFlex="100" fxLayoutAlign="space-between center">
+          <h1>Sing in</h1>
+          <button class="b-wide-full-btn" [routerLink]="['/login']" color="primary" fxFlex mat-raised-button>
+            Login
+          </button>
+        </div>
+      </mat-card-content>
+    </mat-card>
+
+    <mat-card *ngIf="isAuth()">
     <mat-card-content>
-      <div  fxLayout="column" fxFlex="100" fxLayoutAlign="space-between center">
-      <h1>Inicie sesion</h1>
-      <button  class="b-wide-full-btn" [routerLink]="['/login']" 
-      color="primary" fxFlex mat-raised-button >
-      Login
-    </button>  
-    </div>
-    </mat-card-content>
- </mat-card>
+      <div fxLayout="column" fxFlex="100" fxLayoutAlign="center center">
+        
+        <div fxFlex>
+          <h1>List of Ships</h1>
+        </div>
+        
+        <div fxFlex>
+          <h2>check it out the list of starships</h2>
+        </div>
+        
+        <div fxFlex>
+          <button class="ships-full-width" color="primary" fxFlex mat-raised-button [routerLink]="['/ships']"> GO! </button>
+        </div>
+
+      </div>
+
+
+</mat-card-content>
+</mat-card>
+</div>
+
+</div>

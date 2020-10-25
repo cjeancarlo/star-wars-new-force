@@ -1,17 +1,13 @@
-<mat-toolbar color="primary">
-    <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
-      <mat-icon>menu</mat-icon>
-    </button>
-    <span>Star Wars New Force</span>
-    <span class="ship-toolbar-spacer"></span>
-    <button mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
-      <mat-icon>login</mat-icon>
-    </button>
-    <button mat-icon-button class="example-icon" aria-label="Example icon-button with share icon">
-      <mat-icon>register</mat-icon>
-    </button>
-  </mat-toolbar>
 
+<div fxLayout="column"  fxFlex="100" >
 
+  <div fxFlex>
+    <app-tool-bar></app-tool-bar>
+  </div>
+  
+  <div fxFlex>
+    <router-outlet ></router-outlet>
+  </div>
 
-  <router-outlet ></router-outlet>
+  <div>
+  

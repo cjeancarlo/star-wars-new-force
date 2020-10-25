@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AuthenticationService } from 'src/app/services/authentication.service';
 
 @Component({
   selector: 'app-landing',
@@ -7,9 +8,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LandingComponent implements OnInit {
 
-  constructor() { }
 
-  ngOnInit(): void {
+  constructor( private authenticationService: AuthenticationService) { }
+
+  ngOnInit(): void { }
+
+  isAuth(): boolean {
+        return this.authenticationService.isAuth;
   }
 
 }
