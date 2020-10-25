@@ -1,0 +1,15 @@
+<mat-toolbar color="primary">
+    <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
+      <mat-icon>menu</mat-icon>
+    </button>
+    <span>Star Wars New Force</span>
+    <span class="ship-toolbar-spacer"></span>
+    <button mat-icon-button  aria-label="Log in" *ngIf="!isAuth()" [routerLink]="['/login']">
+      LogIn
+    </button>
+    <button mat-icon-button  aria-label="Log out" *ngIf="isAuth()" (click)="logout()">
+      LogOut
+    </button>
+    
+  </mat-toolbar>
+

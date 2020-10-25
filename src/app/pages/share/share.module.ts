@@ -33,6 +33,8 @@ import {MatProgressBarModule} from '@angular/material/progress-bar';
 import { ShipsComponent } from 'src/app/components/ships/ships.component';
 import { ShipCardComponent } from 'src/app/components/ship-card/ship-card.component';
 import { ShipInfoDetailComponent } from 'src/app/components/ship-info-detail/ship-info-detail.component';
+import { ShowMessageComponent } from 'src/app/components/show-message/show-message.component';
+import { ToolBarComponent } from 'src/app/components/tool-bar/tool-bar.component';
 
 
 const COREMODULE: any[] = [
@@ -79,7 +81,9 @@ const MATERIAL: any[] = [
 const COMPONENTES: any[] = [
   ShipsComponent,
   ShipCardComponent,
-  ShipInfoDetailComponent
+  ShipInfoDetailComponent,
+  ShowMessageComponent,
+  ToolBarComponent
 ];
 
 @NgModule({
