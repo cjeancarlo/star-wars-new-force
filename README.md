@@ -1,14 +1,25 @@
 # StarWarsNewForce
-
+This project was built for a Dev Case test for a job,
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.0.3.
 
-## Development server
+### Built With
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+* [@angular/material](https://material.angular.io/)  
+    why Material
+    Material Design, Responsive Layout, Accessibility, Material Design is the soul of Angular Material and it makes aesy to design
+* [@angular/cli](https://angular.io/)  
+    why Angular ?
+    Because iam in love with Angular
+* [@angular/flex-layout](https://github.com/angular/flex-layout)
+    why flex-layout ?
+    Every responsive design needs to show, hide or modify the look of some elements per breakpoint. 
+    with this tool everything is covered.
 
-## Code scaffolding
+## Installation
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+After you clone repository
+Run $ `npm i`
+
 
 ## Build
 
@@ -19,9 +30,10 @@ Run `ng build` to build the project. The build artifacts will be stored in the `
 Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
 
 ## Running end-to-end tests
+start the app `npm run start:tm`
+Run `npm run cypress:open` to execute the end-to-end tests via Cypress
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+## Contributing
+Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
+Please make sure to update tests as appropriate.
 
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).

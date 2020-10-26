@@ -1,0 +1,24 @@
+<mat-card class="ship-card">
+    <mat-card-header>
+     <mat-card-title>{{ship.name}}</mat-card-title>
+      <mat-card-subtitle>{{ship.starship_class}}</mat-card-subtitle>
+    </mat-card-header>
+    
+    
+    <mat-card-content>
+      <div  fxLayout="column" fxFlex="100" fxLayoutAlign="center center" style="height: 100%;">
+      
+        <img  fxFlex="50" class="ship-card-img" src="https://starwars-visualguide.com/assets/img/starships/{{starshipId}}.jpg" alt="{{ship.name}}">
+      <button fxFlex mat-fab color="primary" class="ship-card-btn" aria-label="open ships details" (click)="openDialogInfo()">
+        <mat-icon svgIcon="ship-info-icon" aria-hidden="false"  ></mat-icon>
+      </button>  
+      <p fxFlex>
+    {{ship.model}}
+      </p>
+
+      </div>  
+      
+    
+    </mat-card-content>
+    
+  </mat-card>

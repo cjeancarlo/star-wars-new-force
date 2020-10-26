@@ -1,0 +1,11 @@
+
+.ship-sidenav-content {
+    display: flex;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .ship-sidenav {
+    padding: 20px;
+  }

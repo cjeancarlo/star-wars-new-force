@@ -1,0 +1,36 @@
+<mat-drawer-container class="ship-container" autosize>
+  <mat-drawer #drawer class="ship-sidenav" mode="side">
+  
+    <div fxLayout="column" fxFlex="100" fxLayoutAlign="start start">
+      <div fxLayout="column" fxFlex="10"></div>
+      <div fxLayout="column" fxFlex="90">
+        <button mat-button  [routerLink]="['/landing']" >Home </button>
+        <mat-divider></mat-divider>
+        <button mat-button *ngIf="isAuth()"  [routerLink]="['/profile']" >Profile</button>
+        <mat-divider></mat-divider>
+        <button mat-button *ngIf="isAuth()"  [routerLink]="['/ships']" >Ships </button>
+        <mat-divider></mat-divider>
+        <button mat-button *ngIf="!isAuth()" [routerLink]="['/register']" >Register </button>
+        
+        <button mat-button *ngIf="!isAuth()" [routerLink]="['/login']" >Login </button>
+        <button mat-button *ngIf="isAuth()"  (click)="logout()" >Logout </button>
+        <mat-divider></mat-divider>
+        <button mat-button   (click)="openDialogAbout()" >About </button>
+
+      </div>
+    </div>
+    
+  
+  </mat-drawer>
+
+
+  
+    <div fxLayout="column" fxFlex="100" >
+        <div fxFlex> <app-tool-bar  [drawer]="drawer"></app-tool-bar>       </div>
+        <div fxFlex> <router-outlet ></router-outlet></div>
+      </div>
+    
+    
+     
+
+</mat-drawer-container>

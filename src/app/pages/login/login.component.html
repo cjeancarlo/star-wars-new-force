@@ -1,0 +1,31 @@
+
+<div fxLayout="row"  fxFlex="100" class="login-container">
+  <div  fxFlex="20" ></div>
+  <div  fxFlex="60" class="ships-full-width">
+    <form   [formGroup]="loginForm" class="ships-full-width">
+      <div  fxLayout="column" fxFlex="100" fxLayoutAlign="space-between center">
+    
+        <mat-form-field appearance="outline" fxFlex="100" class="ships-full-width">
+          <mat-label>Username </mat-label>
+          <input matInput formControlName="username">
+        </mat-form-field>
+    
+        <mat-form-field appearance="outline" fxFlex="100" class="ships-full-width">
+          <mat-label>Password</mat-label>
+          <input type="password" matInput formControlName="password">
+        </mat-form-field>
+    
+        <div fxLayout="row" fxLayoutGap="10px" style="width: 100%;" fxFlex="100" fxLayoutAlign="space-between center">
+          <button  class="ships-full-width" [disabled]="!loginForm.valid" 
+          color="primary" fxFlex mat-raised-button (click)="login()">
+          Login
+        </button>
+        <button  class="ships-full-width"  mat-flat-button fxFlex mat-raised-button [routerLink]="['/register']" > Register
+        </button>
+        </div>
+      </div>
+    </form>
+  </div>
+  <div  fxFlex="20" ></div>
+</div>
+

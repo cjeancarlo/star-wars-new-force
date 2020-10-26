@@ -1,0 +1,69 @@
+<div class="ship-info-card" [ngClass.xs]="'ship-info-card-xs'">
+
+  <h1>{{ship.name}}</h1>
+  <h3>{{ship.starship_class}}</h3>
+
+
+  <div fxLayout="row" fxLayout.sm="column" fxLayout.xs="column" fxLayoutAlign="start" fxLayoutGap="20px"
+    fxLayoutGap.xs="0px" fxLayoutGap.xs="0">
+
+    <div fxFlex="60" fxLayout="row" fxLayoutAlign="start start">
+      
+      <img class="ship-card-img" src="https://starwars-visualguide.com/assets/img/starships/{{starshipId}}.jpg"
+      onerror="this.onerror=null; this.src='assets/img/notFound.png'"  
+      alt="{{ship.name}}">
+    </div>
+
+    <div fxFlex="40" fxLayout="column" fxLayoutAlign="start start" style="max-width: 100%;">
+
+      
+      <mat-tab-group mat-align-tabs="start" >
+        <mat-tab label="Info" class="ship-tabs-box">
+          <div class="ship-tabs-box">
+            <p class="ship-text-desc" > Modelo: {{ship.model}}</p>
+            <p class="ship-text-desc" > Fabricante: {{ship.manufacturer}}</p>
+            <p class="ship-text-desc" > Costo: {{ship.cost_in_credits}}</p>
+            <p class="ship-text-desc" > Longitud: {{ship.length}}</p>
+            <p class="ship-text-desc" > Maxima velocidad: {{ship.max_atmosphering_speed}}</p>
+            <p class="ship-text-desc" > Tripulación: {{ship.crew}}</p>
+            <p class="ship-text-desc" > Capacidad de Carga: {{ship.cargo_capacity}}</p>
+            <p class="ship-text-desc" > Cosumibles: {{ship.consumables}} </p>
+            <p class="ship-text-desc" >calificación de hiperimpulsor: {{ship.hyperdrive_rating}}</p>
+            <p class="ship-text-desc" >MGLT: {{ship.MGLT}}</p>
+            <p class="ship-text-desc" >Pasajeros: {{ship.passengers}}</p>
+            <p class="ship-text-desc" >clase de nave estelar {{ship.starship_class}}</p>
+            <p class="ship-text-desc" >Creado: {{ship.created}}</p>
+            <p class="ship-text-desc" >Editado: {{ship.edited}}</p>
+          </div>
+
+        </mat-tab>
+        <mat-tab label="Pilots" class="ship-tabs-box">
+          <div class="ship-tabs-box">
+            <div *ngFor="let p of ship.pilotsDetail">
+              <h2>Name: {{p.name}}</h2>
+              <mat-divider></mat-divider>
+              <h3>Gender: {{p.gender}}</h3>
+              <p>Height: {{p.height}} </p>
+            </div>
+          </div>
+        </mat-tab>
+        <mat-tab label="Films" class="ship-tabs-box">
+          <div class="ship-tabs-box">
+            <div *ngFor="let f of ship.filmsDetail">
+
+              <h2>{{f.title}}</h2>
+              <mat-divider></mat-divider>
+                <p  class="ship-text-desc"> {{f.opening_crawl}} </p>
+            </div>
+          </div>
+        </mat-tab>
+      </mat-tab-group>
+    
+
+
+
+    </div>
+
+  </div>
+
+</div>

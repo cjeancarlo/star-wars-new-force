@@ -1,0 +1,17 @@
+
+.ship-card {
+    width: 380px;
+    margin: 10px;
+    height: 93%;
+  }
+
+.ship-card-img {
+    max-width: 100%;
+}
+
+.ship-card-btn {
+    bottom: 15px;
+    position: absolute;
+    right: 35px;
+}
+

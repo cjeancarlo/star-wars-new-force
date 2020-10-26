@@ -1,0 +1,141 @@
+@import '~@angular/material/theming';
+@include mat-core();
+/*@font-face {
+  font-family: Gotham;
+  src: url("/assets/fonts/Gotham/GothamMedium.otf") format("truetype");
+}
+
+@font-face {
+  font-family: GothamLigth;
+  src: url("/assets/fonts/Gotham/GothamRnd-Light.otf") format("truetype");
+}
+body {
+  margin: 0;
+  font-family: 'Gotham';
+  padding-right: 0px !important;
+  max-width: 100vw !important;
+}*/
+
+  
+/*  $custom-typography: mat-typography-config($font-family: 'Gotham',
+  );*/
+//  @include angular-material-typography($custom-typography);
+  $massimo-primary: (50 : #f7f3ed,
+  100 : #eae2d3,
+  200 : #dcceb5,
+  300 : #ceba97,
+  400 : #c4ac81,
+  500 : #b99d6b,
+  600 : #b29563,
+  700 : #aa8b58,
+  800 : #a2814e,
+  900 : #936f3c,
+  A100 : #fff4e4,
+  A200 : #ffdeb1,
+  A400 : #ffc87e,
+  A700 : #ffbe64,
+  contrast: (
+      50 : #000000,
+      100 : #000000,
+      200 : #000000,
+      300 : #000000,
+      400 : #000000,
+      500 : #ffffff,
+      600 : #000000,
+      700 : #000000,
+      800 : #000000,
+      900 : #ffffff,
+      A100 : #000000,
+      A200 : #000000,
+      A400 : #000000,
+      A700 : #000000,
+    ));
+  
+  
+  
+  $massimo-accent: (50 : #e0e0e0,
+  100 : #b3b3b3,
+  200 : #808080,
+  300 : #4d4d4d,
+  400 : #262626,
+  500 : #000000,
+  600 : #000000,
+  700 : #000000,
+  800 : #000000,
+  900 : #000000,
+  A100 : #a6a6a6,
+  A200 : #8c8c8c,
+  A400 : #737373,
+  A700 : #666666,
+  contrast: (
+      50 : #000000,
+      100 : #000000,
+      200 : #000000,
+      300 : #ffffff,
+      400 : #ffffff,
+      500 : #ffffff,
+      600 : #ffffff,
+      700 : #ffffff,
+      800 : #ffffff,
+      900 : #ffffff,
+      A100 : #000000,
+      A200 : #000000,
+      A400 : #ffffff,
+      A700 : #ffffff,
+    ));
+  $massimo-background: (status-bar: map_get($mat-grey, 300),
+    app-bar: map_get($mat-grey, 100),
+    //background: map_get($mat-grey, 50),
+    hover: map_get($mat-grey, 400),
+    //card: map_get($mat-grey, 300),
+    //dialog: map_get($massimo-primary, 50),
+    /*disabled-button: rgba(black, 0.12),
+      raised-button: white,
+      focused-button: $dark-focused,
+      selected-button: map_get($mat-grey, 300),
+      selected-disabled-button: map_get($mat-grey, 400),
+      disabled-button-toggle: map_get($mat-grey, 200),
+      unselected-chip: map_get($mat-grey, 300),
+      disabled-list-option: map_get($mat-grey, 200), */
+  );
+  $massimo-foreground: (base: black,
+    divider: $dark-dividers,
+    dividers: $dark-dividers,
+    disabled: $dark-disabled-text,
+    disabled-button: rgba(black, 0.26),
+    disabled-text: $dark-disabled-text,
+    elevation: black,
+    hint-text: $dark-disabled-text,
+    secondary-text: $dark-secondary-text,
+    icon: rgba(black, 0.54),
+    icons: rgba(black, 0.54),
+    text: rgba(black, 0.87),
+    slider-min: rgba(black, 0.87),
+    slider-off: rgba(black, 0.26),
+    slider-off-active: rgba(black, 0.38),
+  
+  );
+  
+  
+  @function create-massimo-theme($primary, $accent, $warn: mat-palette($mat-red)) {
+    @return (primary: $primary, accent: $accent, warn: $warn, is-dark: false, foreground: $massimo-foreground, background: $massimo-background);
+  }
+  
+  $massimo-app-primary: mat-palette($massimo-primary, 500);
+  $massimo-app-accent: mat-palette($massimo-accent, 50);
+  $massimo-app-warn: mat-palette($mat-red);
+  
+  $massimo-app-theme: mat-light-theme($massimo-app-primary, $massimo-app-accent, $massimo-app-warn);
+  @include angular-material-theme($massimo-app-theme);
+  
+  
+  
+  .ships-full-width {
+    width: 100%;
+  }
+
+  .ship-no-padding-dialog .mat-dialog-container {
+    padding: 0;
+    width: 95%;
+  }
+  

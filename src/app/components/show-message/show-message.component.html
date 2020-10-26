@@ -1,0 +1,19 @@
+  <div fxLayout="column" fxFlex="100">
+    <div fxFlex="40" >
+      <div fxLayout="row" fxFlex="100" fxLayoutAlign="space-between center" >
+        <div fxFlex="80">
+            <p>{{data.title}}</p> 
+        </div>
+        <div fxFlex="20">
+          <button mat-icon-button (click)="snackBarRef.dismiss()">
+            <mat-icon>close</mat-icon>
+          </button>
+        </div>
+      </div>
+    </div>
+
+
+    <div fxFlex="60"  >
+      <p>{{data.message}}</p>
+    </div>
+  </div>
