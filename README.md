@@ -29,9 +29,6 @@ Run `ng build` to build the project. The build artifacts will be stored in the `
 
 Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
 
-## Running end-to-end tests
-start the app `npm run start:tm`
-Run `npm run cypress:open` to execute the end-to-end tests via Cypress
 
 ## Contributing
 Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
