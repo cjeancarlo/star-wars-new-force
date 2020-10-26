@@ -35,8 +35,9 @@ export class UserService {
 
   constructor() {
 
-    this.getUsers();
+    this.refreshUsers();
     console.log('get current');
+
     let currentUser = JSON.parse(localStorage.getItem('currentUser'));
 
     if (currentUser !== null) {
@@ -63,13 +64,16 @@ export class UserService {
   authUser(username: string, password: string) {
     return this.users.pipe(
       mergeMap(user => {
-        const curretuser = user.filter(currentuser => currentuser.username === username && currentuser.password === password)
+        const curretuser = user.filter(currentuser => currentuser.username === username && currentuser.password === password);
+
+         console.log('current', curretuser) ;
+
         if (curretuser.length !== 0) {
           this.responseSubject.next({
             success: true,
-            message: 'Welcome ' + user[0].username
+            message: 'Welcome ' + curretuser[0].username
           });
-          return of(user[0]);
+          return of(curretuser[0]);
         } else {
           this.responseSubject.next({
             success: false,
@@ -136,17 +140,13 @@ export class UserService {
         }
       );
       console.log(this.arrayUsers);
-    })
-
-
-
+    });
 
   }
 
 
 
   private setUsers(user: User) {
-    console.log(user);
     this.currentUserSubject.next(user);
 
     const e = this.shipBase64.encode(JSON.stringify(user));
@@ -154,9 +154,11 @@ export class UserService {
 
     const eS = this.shipBase64.encode(JSON.stringify(this.arrayUsers));
     localStorage.setItem('users', JSON.stringify(eS));
+
+    this.refreshUsers();
   }
 
-  private getUsers() {
+  private refreshUsers() {
 
     let users = JSON.parse(localStorage.getItem('users'));
 

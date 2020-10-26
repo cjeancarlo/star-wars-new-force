@@ -11,10 +11,6 @@ export class ShowMessageComponent  {
 
   constructor(
     public snackBarRef: MatSnackBarRef<ShowMessageComponent>,
-    @Inject(MAT_SNACK_BAR_DATA) public data: any
-  ) { 
-
-    console.log(this.data)
-  }
+    @Inject(MAT_SNACK_BAR_DATA) public data: any ) { }
 }
 

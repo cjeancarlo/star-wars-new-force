@@ -36,6 +36,8 @@ import { ShipInfoDetailComponent } from 'src/app/components/ship-info-detail/shi
 import { ShowMessageComponent } from 'src/app/components/show-message/show-message.component';
 import { ToolBarComponent } from 'src/app/components/tool-bar/tool-bar.component';
 import { NgxMasonryModule } from 'ngx-masonry';
+import { AboutComponent } from 'src/app/components/about/about.component';
+
 
 
 const COREMODULE: any[] = [
@@ -86,7 +88,9 @@ const COMPONENTES: any[] = [
   ShipCardComponent,
   ShipInfoDetailComponent,
   ShowMessageComponent,
-  ToolBarComponent
+  ToolBarComponent,
+  AboutComponent
+
 ];
 
 @NgModule({

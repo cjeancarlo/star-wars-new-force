@@ -55,7 +55,9 @@ export class LoginComponent implements OnInit {
 
   showMessage(title: string, message: string) {
     const data = { title, message };
-    this.snackBar.openFromComponent(ShowMessageComponent, { data });
+    this.snackBar.openFromComponent(ShowMessageComponent, {
+      duration: 3000,
+      data });
 
   }
 
