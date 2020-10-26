@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { MatSnackBar } from '@angular/material/snack-bar';
+import { Router } from '@angular/router';
 import { take } from 'rxjs/operators';
 import { ShowMessageComponent } from 'src/app/components/show-message/show-message.component';
 import { UserService } from 'src/app/services/user.service.service';
@@ -15,7 +16,7 @@ export class RegisterComponent implements OnInit {
   loading = false;
   registerForm: FormGroup;
 
-  constructor(private userService: UserService, private snackBar: MatSnackBar, ) {
+  constructor(private userService: UserService, private snackBar: MatSnackBar, private router: Router ) {
     this.registerForm = new FormGroup({
       firstname: new FormControl('', [Validators.required]),
       lastname: new FormControl('', [Validators.required]),
@@ -32,8 +33,14 @@ export class RegisterComponent implements OnInit {
 
       this.userService.createUser(this._v());
 
-      this.userService.response.pipe(take(1)).subscribe(r => {
-      this.showMessage('Message', r.message);
+      this.userService.response.pipe(take(1)).subscribe(res => {
+      this.showMessage('Message', res.message);
+
+
+      if (res.success) {
+        this.router.navigate(['landing']);
+      }
+
 
       });
   }
@@ -44,15 +51,13 @@ export class RegisterComponent implements OnInit {
     return this.registerForm.value;
   }
 
-  ngOnInit(): void {
-
-
-
-  }
+  ngOnInit(): void { }
 
   showMessage(title: string,  message: string) {
     const data = {title, message };
-    this.snackBar.openFromComponent(ShowMessageComponent, { data });
+    this.snackBar.openFromComponent(ShowMessageComponent, {
+      duration: 3000,
+      data });
 
   }
 

@@ -51,10 +51,12 @@ export class ProfileComponent implements OnInit, AfterContentInit {
 
   ngAfterContentInit(): void {
     this.userService.currentUser.subscribe((current: User) => {
+      if (current) {
       this.profileValues.firstname.setValue(current.firstname);
       this.profileValues.lastname.setValue(current.lastname);
       this.profileValues.username.setValue(current.username);
       this.profileValues.password.setValue(current.password);
+    }
     });
 
   }
@@ -63,7 +65,9 @@ export class ProfileComponent implements OnInit, AfterContentInit {
 
   showMessage(title: string, message: string) {
     const data = { title, message };
-    this.snackBar.openFromComponent(ShowMessageComponent, { data });
+    this.snackBar.openFromComponent(ShowMessageComponent, {
+      duration: 3000,
+      data });
 
   }
 

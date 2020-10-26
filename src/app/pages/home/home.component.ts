@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
+import { AboutComponent } from 'src/app/components/about/about.component';
 import { AuthenticationService } from 'src/app/services/authentication.service';
 
 @Component({
@@ -8,7 +10,8 @@ import { AuthenticationService } from 'src/app/services/authentication.service';
 })
 export class HomeComponent implements OnInit {
 
-  constructor(private authenticationService: AuthenticationService) { }
+  constructor(private authenticationService: AuthenticationService, public dialog: MatDialog) { }
+
 
   ngOnInit(): void {
   }
@@ -20,6 +23,14 @@ export class HomeComponent implements OnInit {
 
   logout() {
     this.authenticationService.logout();
+  }
+
+
+  openDialogAbout(): void {
+    const dialogRef = this.dialog.open(AboutComponent, {
+
+    });
+
   }
 
 

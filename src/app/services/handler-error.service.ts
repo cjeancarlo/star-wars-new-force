@@ -28,7 +28,7 @@ export class HandleErrorService {
             status: error.statusText,
             text: error.error.text
           };
-        break;
+          break;
         case 404:
           errorMessage = {
             status: error.statusText,
