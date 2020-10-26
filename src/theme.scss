@@ -133,3 +133,9 @@ body {
   .ships-full-width {
     width: 100%;
   }
+
+  .ship-no-padding-dialog .mat-dialog-container {
+    padding: 0;
+    width: 95%;
+  }
+  

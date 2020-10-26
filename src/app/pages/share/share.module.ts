@@ -28,13 +28,14 @@ import { MatTableModule } from '@angular/material/table';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import {MatSnackBarModule} from '@angular/material/snack-bar';
 import {MatProgressBarModule} from '@angular/material/progress-bar';
-
+import {MatTabsModule} from '@angular/material/tabs';
 
 import { ShipsComponent } from 'src/app/components/ships/ships.component';
 import { ShipCardComponent } from 'src/app/components/ship-card/ship-card.component';
 import { ShipInfoDetailComponent } from 'src/app/components/ship-info-detail/ship-info-detail.component';
 import { ShowMessageComponent } from 'src/app/components/show-message/show-message.component';
 import { ToolBarComponent } from 'src/app/components/tool-bar/tool-bar.component';
+import { NgxMasonryModule } from 'ngx-masonry';
 
 
 const COREMODULE: any[] = [
@@ -43,6 +44,7 @@ const COREMODULE: any[] = [
   FormsModule,
   ReactiveFormsModule,
   FlexLayoutModule,
+  NgxMasonryModule
 ];
 
 
@@ -74,8 +76,9 @@ const MATERIAL: any[] = [
   MatExpansionModule,
   MatSidenavModule,
   MatSnackBarModule,
-  MatProgressBarModule
-//  MatCarouselModule.forRoot()
+  MatProgressBarModule,
+  MatTabsModule
+
 ];
 
 const COMPONENTES: any[] = [

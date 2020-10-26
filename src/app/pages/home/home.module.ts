@@ -19,9 +19,12 @@ export const HomeRoutes: Routes = [
     }, {
       path: 'register',
       loadChildren: () => import('../register/register.module').then(m => m.RegisterModule),
-    },{
+    }, {
       path: 'ships', canActivate: [RouteGuard],
       loadChildren: () => import('../ships-page/ships.module').then(m => m.ShipsModule),
+    }, {
+      path: 'profile', canActivate: [RouteGuard],
+      loadChildren: () => import('../profile/profile.module').then(m => m.ProfileModule),
     }]
 
   }

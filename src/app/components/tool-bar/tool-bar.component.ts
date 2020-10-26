@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { MatSidenav } from '@angular/material/sidenav';
 import { AuthenticationService } from 'src/app/services/authentication.service';
 
 @Component({
@@ -7,6 +8,8 @@ import { AuthenticationService } from 'src/app/services/authentication.service';
   styleUrls: ['./tool-bar.component.css']
 })
 export class ToolBarComponent implements OnInit {
+
+  @Input() drawer: MatSidenav;
 
   constructor( private authenticationService: AuthenticationService) { }
   ngOnInit(): void {

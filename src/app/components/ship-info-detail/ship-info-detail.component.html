@@ -1,37 +1,67 @@
 <div class="ship-info-card" [ngClass.xs]="'ship-info-card-xs'">
 
-  {{ship.name}}
-  {{ship.starship_class}}
-
+  <h1>{{ship.name}}</h1>
+  <h3>{{ship.starship_class}}</h3>
 
 
   <div fxLayout="row" fxLayout.sm="column" fxLayout.xs="column" fxLayoutAlign="start" fxLayoutGap="20px"
     fxLayoutGap.xs="0px" fxLayoutGap.xs="0">
 
     <div fxFlex="60" fxLayout="row" fxLayoutAlign="start start">
+      
       <img class="ship-card-img" src="https://starwars-visualguide.com/assets/img/starships/{{starshipId}}.jpg"
-        alt="{{ship.name}}">
+      onerror="this.onerror=null; this.src='assets/img/notFound.png'"  
+      alt="{{ship.name}}">
     </div>
 
     <div fxFlex="40" fxLayout="column" fxLayoutAlign="start start">
-      <p> Modelo: {{ship.model}}</p>
-      <p> Fabricante: {{ship.manufacturer}}</p>
-      <p> Costo: {{ship.cost_in_credits}}</p>
-      <p> Longitud: {{ship.length}}</p>
-      <p> Maxima velocidad: {{ship.max_atmosphering_speed}}</p>
-      <p> Tripulación: {{ship.crew}}</p>
-      <p> Capacidad de Carga: {{ship.cargo_capacity}}</p>
-      <p> Cosumibles: {{ship.consumables}} </p>
-      <p>calificación de hiperimpulsor: {{ship.hyperdrive_rating}}</p>
-      <p>MGLT: {{ship.MGLT}}</p>
-      <p>Pasajeros: {{ship.passengers}}</p>
-      <p>clase de nave estelar {{ship.starship_class}}</p>
-      <p>Creado: {{ship.created}}</p>
-      <p>Editado: {{ship.edited}}</p>
 
 
-      <!-- pilots: string[];
-    films: string[]; -->
+
+      <mat-tab-group mat-align-tabs="start">
+        <mat-tab label="Info" class="ship-tabs-box">
+          <div class="ship-tabs-box">
+            <p> Modelo: {{ship.model}}</p>
+            <p> Fabricante: {{ship.manufacturer}}</p>
+            <p> Costo: {{ship.cost_in_credits}}</p>
+            <p> Longitud: {{ship.length}}</p>
+            <p> Maxima velocidad: {{ship.max_atmosphering_speed}}</p>
+            <p> Tripulación: {{ship.crew}}</p>
+            <p> Capacidad de Carga: {{ship.cargo_capacity}}</p>
+            <p> Cosumibles: {{ship.consumables}} </p>
+            <p>calificación de hiperimpulsor: {{ship.hyperdrive_rating}}</p>
+            <p>MGLT: {{ship.MGLT}}</p>
+            <p>Pasajeros: {{ship.passengers}}</p>
+            <p>clase de nave estelar {{ship.starship_class}}</p>
+            <p>Creado: {{ship.created}}</p>
+            <p>Editado: {{ship.edited}}</p>
+          </div>
+
+        </mat-tab>
+        <mat-tab label="Pilots" class="ship-tabs-box">
+          <div class="ship-tabs-box">
+            <div *ngFor="let p of ship.pilotsDetail">
+              <h2>Name: {{p.name}}</h2>
+              <mat-divider></mat-divider>
+              <h3>Gender: {{p.gender}}</h3>
+              <p>Height: {{p.height}} </p>
+            </div>
+          </div>
+        </mat-tab>
+        <mat-tab label="Films" class="ship-tabs-box">
+          <div class="ship-tabs-box">
+            <div *ngFor="let f of ship.filmsDetail">
+
+              <h2>{{f.title}}</h2>
+              <mat-divider></mat-divider>
+                <p> {{f.opening_crawl}} </p>
+            </div>
+          </div>
+        </mat-tab>
+      </mat-tab-group>
+
+
+
 
     </div>
 

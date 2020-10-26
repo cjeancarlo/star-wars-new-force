@@ -1,3 +1,6 @@
+import { Film } from './film.interface';
+import { Pilot } from './pilot.interface';
+
 export interface Ship {
     name: string;
     model: string;
@@ -17,4 +20,7 @@ export interface Ship {
     created: string;
     edited: string;
     url: string;
+    filmsDetail?: Film[];
+    pilotsDetail?: Pilot[];
+    bgClass?: string;
 }

@@ -17,13 +17,12 @@ export class ShipInfoDetailComponent implements OnInit {
     @Inject(MAT_DIALOG_DATA) public ship: Ship) { }
 
   ngOnInit(): void {
+    console.log(this.ship);
   }
 
   get starshipId() {
     return this.shipService.getStarshipId(this.ship);
   }
-
-  
 
   onClose(): void {
     this.dialogRef.close();
