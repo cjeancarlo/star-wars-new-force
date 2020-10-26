@@ -35,6 +35,7 @@ import { ShipCardComponent } from 'src/app/components/ship-card/ship-card.compon
 import { ShipInfoDetailComponent } from 'src/app/components/ship-info-detail/ship-info-detail.component';
 import { ShowMessageComponent } from 'src/app/components/show-message/show-message.component';
 import { ToolBarComponent } from 'src/app/components/tool-bar/tool-bar.component';
+import { NgxMasonryModule } from 'ngx-masonry';
 
 
 const COREMODULE: any[] = [
@@ -43,6 +44,7 @@ const COREMODULE: any[] = [
   FormsModule,
   ReactiveFormsModule,
   FlexLayoutModule,
+  NgxMasonryModule
 ];
 
 

@@ -1,8 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import { AfterContentInit, Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { take } from 'rxjs/operators';
 import { ShowMessageComponent } from 'src/app/components/show-message/show-message.component';
+import { User } from 'src/app/interfaces/user.interface';
 import { UserService } from 'src/app/services/user.service.service';
 
 
@@ -11,17 +12,17 @@ import { UserService } from 'src/app/services/user.service.service';
   templateUrl: './profile.component.html',
   styleUrls: ['./profile.component.css']
 })
-export class ProfileComponent implements OnInit {
+export class ProfileComponent implements OnInit, AfterContentInit {
 
 
   loading = false;
   profileForm: FormGroup;
 
-  constructor(private userService: UserService, private snackBar: MatSnackBar, ) {
+  constructor(private userService: UserService, private snackBar: MatSnackBar) {
     this.profileForm = new FormGroup({
-      firstName: new FormControl('', [Validators.required]),
-      lastName: new FormControl('', [Validators.required]),
-      username: new FormControl('', [Validators.required]),
+      firstname: new FormControl('', [Validators.required]),
+      lastname: new FormControl('', [Validators.required]),
+      username: new FormControl({ value: '', disabled: true }, [Validators.required]),
       password: new FormControl('', [Validators.required])
     });
   }
@@ -32,28 +33,36 @@ export class ProfileComponent implements OnInit {
   updateUser() {
     if (this.profileForm.valid) {
 
-      /*this.userService.createUser(this._v());
-
+      this.userService.updateUser(this._v());
       this.userService.response.pipe(take(1)).subscribe(r => {
-      this.showMessage('Message', r.message);
+        this.showMessage('Message', r.message);
 
-      });*/
+      });
+    }
   }
-}
 
 
   _v() {
-    return this.profileForm.value;
+    return {
+      ...this.profileForm.value,
+      username: this.profileValues.username.value
+    };
   }
 
-  ngOnInit(): void {
-
-
+  ngAfterContentInit(): void {
+    this.userService.currentUser.subscribe((current: User) => {
+      this.profileValues.firstname.setValue(current.firstname);
+      this.profileValues.lastname.setValue(current.lastname);
+      this.profileValues.username.setValue(current.username);
+      this.profileValues.password.setValue(current.password);
+    });
 
   }
 
-  showMessage(title: string,  message: string) {
-    const data = {title, message };
+  ngOnInit(): void { }
+
+  showMessage(title: string, message: string) {
+    const data = { title, message };
     this.snackBar.openFromComponent(ShowMessageComponent, { data });
 
   }

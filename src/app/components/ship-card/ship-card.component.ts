@@ -25,7 +25,8 @@ export class ShipCardComponent implements OnInit {
 
   openDialogInfo(): void {
     const dialogRef = this.dialog.open(ShipInfoDetailComponent, {
-      width: '70%',
+      panelClass: 'ship-no-padding-dialog',
+      //width: '70%',
       data:  this.ship
     });
 

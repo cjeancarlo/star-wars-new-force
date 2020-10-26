@@ -1,4 +1,5 @@
 import { Film } from './film.interface';
+import { Pilot } from './pilot.interface';
 
 export interface Ship {
     name: string;
@@ -20,4 +21,6 @@ export interface Ship {
     edited: string;
     url: string;
     filmsDetail?: Film[];
+    pilotsDetail?: Pilot[];
+    bgClass?: string;
 }
